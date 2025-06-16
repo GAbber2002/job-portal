@@ -27,6 +27,14 @@ app.get('/', (req, res) => {
   res.json({ message: 'Job Portal Backend is running' });
 });
 
+// Add new route for /api/jobs
+app.get('/api/jobs', (req, res) => {
+  res.json([
+    { title: "Frontend Developer", company: "Google" },
+    { title: "Backend Developer", company: "Amazon" }
+  ]);
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
