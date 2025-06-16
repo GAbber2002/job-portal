@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 
 const jobRoutes = require('./routes/jobRoutes');
-app.use('/jobs', jobRoutes);
+app.use('/api/jobs', jobRoutes);
 
 
 const authRoutes = require('./routes/authRoutes');
@@ -27,13 +27,7 @@ app.get('/', (req, res) => {
   res.json({ message: 'Job Portal Backend is running' });
 });
 
-// Add new route for /api/jobs
-app.get('/api/jobs', (req, res) => {
-  res.json([
-    { title: "Frontend Developer", company: "Google" },
-    { title: "Backend Developer", company: "Amazon" }
-  ]);
-});
+
 
 // Start server
 app.listen(PORT, () => {
